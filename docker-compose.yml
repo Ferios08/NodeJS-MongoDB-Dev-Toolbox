@@ -13,10 +13,10 @@ services:
   web:
     build: .
     command: >
-      bash -c " npm install --quiet
+      bash -c "npm install --quiet
       && npm run start"
     volumes:
-      - ./src/*:/usr/app/
+      - ./src/:/usr/app/
     ports:
       - "5000:5000"
     depends_on:
