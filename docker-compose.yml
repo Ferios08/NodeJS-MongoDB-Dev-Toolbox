@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo:4.0
+    env_file:
+      - env # configure env vars in this file
+    ports:
+      - 27027:27017
+    volumes:
+      - ./mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - mongodb_data:/data/db # Persist data even if container shuts down
+      
+  web:
+    image: node:10
+    command: npm install --quiet && nodemon
+    volumes:
+      - ./src/*:/usr/app/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+
+
+volumes:
+  mongodb_data:
