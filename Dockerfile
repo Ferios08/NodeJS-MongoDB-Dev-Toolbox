@@ -5,4 +5,3 @@ RUN npm install -g nodemon
 
 EXPOSE 5000
 
-ENTRYPOINT [ "npm i" ]
