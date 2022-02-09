@@ -11,7 +11,7 @@ services:
       - mongodb_data:/data/db # Persist data even if container shuts down
       
   web:
-    image: node:10
+    build: .
     command: npm install --quiet && nodemon
     volumes:
       - ./src/*:/usr/app/

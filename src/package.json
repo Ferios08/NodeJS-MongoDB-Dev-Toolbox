@@ -4,7 +4,7 @@
   "description": "Test App",
   "main": "/usr/app/index.js",
   "scripts": {
-    "start": "node /usr/app/index.js",
+    "start": "nodemon --inspect=0.0.0.0 /usr/app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Firas Chbiki",
