@@ -12,7 +12,7 @@ services:
       
   web:
     build: .
-    command: npm install --quiet && npm run start
+    command: npm install --quiet; npm run start
     volumes:
       - ./src/*:/usr/app/
     ports:
