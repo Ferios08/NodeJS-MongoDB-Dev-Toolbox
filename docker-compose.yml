@@ -21,6 +21,14 @@ services:
       - "5000:5000"
     depends_on:
       - mongodb
+  editor:
+    image: firasdotcom/theia:latest
+    volumes:
+      - ./src/:/home/project:cached
+    ports:
+      - "8181:3000"
+    depends_on:
+      - backend
 
 
 volumes:
